@@ -82,6 +82,37 @@
       box-shadow: 0 0 25px #087cff55;
     }
 
+<section class="apps-section" id="apps">
+  <p class="apps-tag">POWERED BY ZENVORA</p>
+  <h2>Our <span>Ecosystem</span></h2>
+
+  <div class="apps-grid">
+    <div class="app-card blue">
+      <div class="app-icon">⌨</div>
+      <h3>ZENVORA Keyboard</h3>
+      <p>Type Smarter.</p>
+    </div>
+
+    <div class="app-card purple">
+      <div class="app-icon">▤</div>
+      <h3>ZENVORA Notes</h3>
+      <p>Note Better.</p>
+    </div>
+
+    <div class="app-card blue">
+      <div class="app-icon">◎</div>
+      <h3>ZENVORA Browser</h3>
+      <p>Browse Faster.</p>
+    </div>
+
+    <div class="app-card purple">
+      <div class="app-icon">AI</div>
+      <h3>ZENVORA AI</h3>
+      <p>Think Smarter.</p>
+    </div>
+  </div>
+</section>
+
     footer {
       padding: 25px;
       text-align: center;
@@ -185,6 +216,75 @@ footer {
   -webkit-text-fill-color: white;
   box-shadow: 0 0 20px #087cff88;
 }
+
+
+.apps-section {
+  padding: 65px 22px;
+  text-align: center;
+}
+
+.apps-tag {
+  color: #00d9ff;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.apps-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.apps-section h2 span {
+  background: linear-gradient(90deg, #00d9ff, #a020f0);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.app-card {
+  padding: 22px 12px;
+  border-radius: 18px;
+  text-align: left;
+  background: rgba(12, 28, 59, 0.8);
+  border: 1px solid #087cff88;
+  box-shadow: 0 0 18px #087cff18;
+}
+
+.app-card.purple {
+  border-color: #9228e888;
+  background: rgba(30, 15, 57, 0.8);
+}
+
+.app-icon {
+  font-size: 32px;
+  color: #00d9ff;
+  margin-bottom: 12px;
+}
+
+.app-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.app-card p {
+  color: #a9b8d0;
+  font-size: 13px;
+}
+
+@media (max-width: 360px) {
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 <body>
