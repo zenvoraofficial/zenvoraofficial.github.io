@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +15,7 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Arial, sans-serif;
@@ -35,6 +34,7 @@
       z-index: 100;
       background: rgba(5, 12, 29, 0.85);
       backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(0, 217, 255, 0.15);
     }
 
@@ -216,7 +216,7 @@
       line-height: 1.6;
     }
 
-    /* DAY 8 - SERVICES */
+    /* SERVICES */
 
     .services-section {
       padding: 80px 22px;
@@ -233,28 +233,80 @@
       box-shadow: 0 0 20px #087cff44;
     }
 
-    /* ABOUT */
+    /* ABOUT + CONTACT */
 
-    .about-section {
-      padding: 90px 25px;
+    .about-contact-section {
+      padding: 80px 22px;
       text-align: center;
       background: #081329;
     }
 
-    .about-tag {
+    .about-contact-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      max-width: 420px;
+      margin: auto;
+    }
+
+    .about-toggle,
+    .contact-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+      padding: 17px 12px;
+      border: 1px solid #087cff88;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #087cff, #9228e8);
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 25px #087cff44;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .about-toggle:hover,
+    .contact-toggle:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 35px #087cff99;
+    }
+
+    .about-content,
+    .contact-form {
+      max-width: 750px;
+      margin: 40px auto 0;
+      animation: sectionOpen 0.4s ease;
+    }
+
+    .about-content[hidden],
+    .contact-form[hidden] {
+      display: none !important;
+    }
+
+    .about-tag,
+    .contact-tag {
       color: #00d9ff;
       letter-spacing: 4px;
       font-size: 13px;
       font-weight: bold;
+      margin-bottom: 15px;
     }
 
-    .about-section h2 {
-      font-size: 38px;
+    .about-content h2,
+    .contact-form h2 {
+      font-size: 36px;
       margin: 20px 0;
     }
 
-    .about-section h2 span {
-      background: linear-gradient(90deg, #00cfff, #963cff);
+    .about-content h2 span,
+    .contact-form h2 span {
+      background: linear-gradient(90deg, #00d9ff, #963cff);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -263,39 +315,11 @@
       color: #aab9d4;
       font-size: 17px;
       line-height: 1.9;
-      max-width: 750px;
-      margin: auto;
     }
 
     .about-highlight {
       color: #00d9ff;
       font-weight: bold;
-    }
-
-    /* DAY 9 - CONTACT */
-
-    .contact-section {
-      padding: 80px 22px;
-      text-align: center;
-      background: #071126;
-    }
-
-    .contact-tag {
-      color: #00d9ff;
-      letter-spacing: 4px;
-      font-size: 13px;
-      margin-bottom: 15px;
-    }
-
-    .contact-section h2 {
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
-    .contact-section h2 span {
-      background: linear-gradient(90deg, #00d9ff, #963cff);
-      -webkit-background-clip: text;
-      color: transparent;
     }
 
     .contact-text {
@@ -304,21 +328,20 @@
       line-height: 1.7;
     }
 
-    .contact-form {
-      max-width: 500px;
-      margin: auto;
+    .contact-form form {
+      display: grid;
+      gap: 18px;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 16px;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      border: 1px solid #087cff88;
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid #087cff66;
       background: #0c1c3b;
       color: white;
-      font-size: 15px;
+      font-size: 17px;
       outline: none;
       font-family: Arial, sans-serif;
     }
@@ -335,26 +358,39 @@
     }
 
     .contact-form textarea {
-      height: 130px;
+      min-height: 150px;
       resize: vertical;
     }
 
-    .contact-form button {
+    .contact-form form button {
       width: 100%;
-      padding: 16px;
+      padding: 18px;
       border: none;
-      border-radius: 30px;
+      border-radius: 35px;
       background: linear-gradient(90deg, #087cff, #9228e8);
       color: white;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    .contact-form button:hover {
+    .contact-form form button:hover {
       transform: translateY(-3px);
       box-shadow: 0 0 25px #087cff88;
+    }
+
+    /* ANIMATION */
+
+    @keyframes sectionOpen {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* FOOTER */
@@ -371,12 +407,15 @@
     /* MOBILE RESPONSIVE */
 
     @media (max-width: 600px) {
-      .about-section {
-        padding: 70px 22px;
+      .about-content h2,
+      .contact-form h2 {
+        font-size: 30px;
       }
 
-      .about-section h2 {
-        font-size: 30px;
+      .about-toggle,
+      .contact-toggle {
+        padding: 16px 8px;
+        font-size: 16px;
       }
     }
 
@@ -384,6 +423,16 @@
       .apps-grid,
       .services-grid {
         grid-template-columns: 1fr;
+      }
+
+      .about-contact-buttons {
+        gap: 8px;
+      }
+
+      .about-toggle,
+      .contact-toggle {
+        font-size: 14px;
+        padding: 14px 5px;
       }
     }
   </style>
@@ -450,7 +499,7 @@
     </div>
   </section>
 
-  <!-- DAY 8 - SERVICES -->
+  <!-- SERVICES -->
 
   <section class="services-section" id="services">
     <p class="services-tag">WHAT WE DO</p>
@@ -483,67 +532,104 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT US + CONTACT US -->
 
-  <section class="about-section" id="about">
-    <p class="about-tag">WHO WE ARE</p>
+  <section class="about-contact-section" id="about">
 
-    <h2>About <span>ZENVORA</span></h2>
+    <!-- TWO BUTTONS SIDE BY SIDE -->
 
-    <p class="about-text">
-      ZENVORA Technologies is focused on building
-      innovative digital solutions for a smarter
-      and more connected future.
+    <div class="about-contact-buttons">
 
-      Our mission is to create powerful applications,
-      useful tools and modern technology experiences
-      that make everyday life easier.
-
-      <br><br>
-
-      <span class="about-highlight">
-        Technology Beyond Limits.
-      </span>
-    </p>
-  </section>
-
-  <!-- DAY 9 - CONTACT -->
-
-  <section class="contact-section" id="contact">
-
-    <p class="contact-tag">GET IN TOUCH</p>
-
-    <h2>Contact <span>Us</span></h2>
-
-    <p class="contact-text">
-      Have a project or idea?
-      Let's build something amazing together.
-    </p>
-
-    <form class="contact-form">
-
-      <input
-        type="text"
-        placeholder="Your Name"
-        required
-      >
-
-      <input
-        type="email"
-        placeholder="Your Email"
-        required
-      >
-
-      <textarea
-        placeholder="Your Message"
-        required
-      ></textarea>
-
-      <button type="submit">
-        Send Message
+      <button
+        type="button"
+        class="about-toggle"
+        id="aboutButton"
+        onclick="toggleAbout()"
+        aria-expanded="false"
+        aria-controls="aboutContent">
+        ✦ About Us
       </button>
 
-    </form>
+      <button
+        type="button"
+        class="contact-toggle"
+        id="contactButton"
+        onclick="toggleContact()"
+        aria-expanded="false"
+        aria-controls="contactForm">
+        ✉ Contact Us
+      </button>
+
+    </div>
+
+    <!-- ABOUT CONTENT -->
+
+    <div class="about-content" id="aboutContent" hidden>
+
+      <p class="about-tag">WHO WE ARE</p>
+
+      <h2>About <span>ZENVORA</span></h2>
+
+      <p class="about-text">
+        ZENVORA Technologies is focused on building
+        innovative digital solutions for a smarter
+        and more connected future.
+
+        Our mission is to create powerful applications,
+        useful tools and modern technology experiences
+        that make everyday life easier.
+
+        <br><br>
+
+        <span class="about-highlight">
+          Technology Beyond Limits.
+        </span>
+      </p>
+
+    </div>
+
+    <!-- CONTACT FORM -->
+
+    <div class="contact-form" id="contactForm" hidden>
+
+      <p class="contact-tag">GET IN TOUCH</p>
+
+      <h2>Contact <span>Us</span></h2>
+
+      <p class="contact-text">
+        Have a project or idea?
+        Let's build something amazing together.
+      </p>
+
+      <form onsubmit="sendContactMessage(event)">
+
+        <input
+          type="text"
+          id="contactName"
+          placeholder="Your Name"
+          required
+        >
+
+        <input
+          type="email"
+          id="contactEmail"
+          placeholder="Your Email"
+          required
+        >
+
+        <textarea
+          id="contactMessage"
+          placeholder="Your Message"
+          required
+        ></textarea>
+
+        <button type="submit">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
 
   </section>
 
@@ -553,6 +639,98 @@
     © 2026 ZENVORA Technologies.
     All Rights Reserved.
   </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // ABOUT US TOGGLE
+
+    function toggleAbout() {
+
+      const about = document.getElementById("aboutContent");
+      const contact = document.getElementById("contactForm");
+      const aboutButton = document.getElementById("aboutButton");
+      const contactButton = document.getElementById("contactButton");
+
+      about.hidden = !about.hidden;
+      contact.hidden = true;
+
+      aboutButton.setAttribute(
+        "aria-expanded",
+        String(!about.hidden)
+      );
+
+      contactButton.setAttribute("aria-expanded", "false");
+
+      if (!about.hidden) {
+        setTimeout(() => {
+          about.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }, 100);
+      }
+
+    }
+
+    // CONTACT US TOGGLE
+
+    function toggleContact() {
+
+      const contact = document.getElementById("contactForm");
+      const about = document.getElementById("aboutContent");
+      const contactButton = document.getElementById("contactButton");
+      const aboutButton = document.getElementById("aboutButton");
+
+      contact.hidden = !contact.hidden;
+      about.hidden = true;
+
+      contactButton.setAttribute(
+        "aria-expanded",
+        String(!contact.hidden)
+      );
+
+      aboutButton.setAttribute("aria-expanded", "false");
+
+      if (!contact.hidden) {
+        setTimeout(() => {
+          contact.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }, 100);
+      }
+
+    }
+
+    // SEND CONTACT MESSAGE
+
+    function sendContactMessage(event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("contactName").value.trim();
+      const email = document.getElementById("contactEmail").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+
+      const subject = encodeURIComponent(
+        "ZENVORA Website Contact - " + name
+      );
+
+      const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage:\n" + message
+      );
+
+      window.location.href =
+        "mailto:YOUR_EMAIL@example.com?subject=" +
+        subject + "&body=" + body;
+
+    }
+
+  </script>
 
 </body>
 </html>
