@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#071126">
+  <meta name="description" content="ZENVORA Technologies - Technology Beyond Limits. Discover innovative applications and digital solutions.">
   <title>ZENVORA | Technology Beyond Limits</title>
+
   <style>
     * {
       margin: 0;
@@ -13,9 +15,20 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #071126;
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          #102653 0%,
+          #071126 48%,
+          #030712 100%
+        );
+      background-attachment: fixed;
       color: white;
     }
 
@@ -24,15 +37,42 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #172b50;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 12, 29, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(0, 217, 255, 0.15);
     }
 
     .logo {
-      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 25px;
       font-weight: 900;
-      background: linear-gradient(90deg, #00d9ff, #087cff, #a020f0);
+      letter-spacing: 1px;
+      background: linear-gradient(
+        90deg, #00d9ff, #087cff, #a020f0
+      );
       -webkit-background-clip: text;
       color: transparent;
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(
+        135deg, #00d9ff, #087cff, #a020f0
+      );
+      color: white;
+      -webkit-text-fill-color: white;
+      box-shadow: 0 0 20px #087cff88;
     }
 
     .hero {
@@ -43,6 +83,36 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background: #087cff;
+      filter: blur(130px);
+      opacity: 0.18;
+      border-radius: 50%;
+      top: 10%;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      background: #9228e8;
+      filter: blur(130px);
+      opacity: 0.16;
+      border-radius: 50%;
+      bottom: 0;
+      right: -100px;
+      pointer-events: none;
     }
 
     .tag {
@@ -59,7 +129,9 @@
     }
 
     h1 span {
-      background: linear-gradient(90deg, #00d9ff, #087cff, #a020f0);
+      background: linear-gradient(
+        90deg, #00d9ff, #087cff, #a020f0
+      );
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -80,238 +152,235 @@
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 0 25px #087cff55;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      z-index: 1;
     }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 35px #087cff99;
+    }
+
+    /* ECOSYSTEM SECTION */
+
+    .apps-section {
+      padding: 65px 22px;
+      text-align: center;
+    }
+
+    .apps-tag {
+      color: #00d9ff;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .apps-section h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .apps-section h2 span {
+      background: linear-gradient(90deg, #00d9ff, #a020f0);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .app-card {
+      padding: 22px 12px;
+      border-radius: 18px;
+      text-align: left;
+      background: rgba(12, 28, 59, 0.8);
+      border: 1px solid #087cff88;
+      box-shadow: 0 0 18px #087cff18;
+    }
+
+    .app-card.purple {
+      border-color: #9228e888;
+      background: rgba(30, 15, 57, 0.8);
+    }
+
+    .app-icon {
+      font-size: 32px;
+      color: #00d9ff;
+      margin-bottom: 12px;
+    }
+
+    .app-card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .app-card p {
+      color: #a9b8d0;
+      font-size: 13px;
+    }
+
+    /* DAY 8 - SERVICES SECTION */
+
+    .services-section {
+      padding: 80px 22px;
+      text-align: center;
+      background: #071126;
+    }
+
+    .services-tag {
+      color: #00d9ff;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .services-section h2 {
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
+
+    .services-section h2 span {
+      background: linear-gradient(90deg, #00d9ff, #a020f0);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .service-card {
+      padding: 25px 15px;
+      text-align: left;
+      border-radius: 18px;
+      background: rgba(12, 28, 59, 0.8);
+      border: 1px solid #087cff88;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:nth-child(even) {
+      background: rgba(30, 15, 57, 0.8);
+      border-color: #9228e888;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #087cff44;
+    }
+
+    .service-icon {
+      font-size: 32px;
+      color: #00d9ff;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #a9b8d0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ABOUT SECTION */
+
+    .about-section {
+      padding: 90px 25px;
+      text-align: center;
+      background: #081329;
+    }
+
+    .about-tag {
+      color: #00d9ff;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .about-section h2 {
+      color: white;
+      font-size: 38px;
+      margin: 20px 0;
+    }
+
+    .about-section h2 span {
+      background: linear-gradient(90deg, #00cfff, #963cff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .about-text {
+      color: #aab9d4;
+      font-size: 17px;
+      line-height: 1.9;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .about-highlight {
+      color: #00d9ff;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+
     footer {
       padding: 25px;
       text-align: center;
       color: #8091ad;
-      border-top: 1px solid #172b50;
+      border-top: 1px solid rgba(0, 217, 255, 0.15);
+      background: rgba(3, 7, 18, 0.7);
       font-size: 13px;
-    } 
-    
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    /* MOBILE RESPONSIVE */
 
-body {
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      #102653 0%,
-      #071126 48%,
-      #030712 100%
-    );
-  background-attachment: fixed;
-}
+    @media (max-width: 600px) {
+      .about-section {
+        padding: 70px 22px;
+      }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(5, 12, 29, 0.85);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(0, 217, 255, 0.15);
-}
+      .about-section h2 {
+        font-size: 30px;
+      }
+    }
 
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  background: #087cff;
-  filter: blur(130px);
-  opacity: 0.18;
-  border-radius: 50%;
-  top: 10%;
-  left: -100px;
-  pointer-events: none;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 240px;
-  height: 240px;
-  background: #9228e8;
-  filter: blur(130px);
-  opacity: 0.16;
-  border-radius: 50%;
-  bottom: 0;
-  right: -100px;
-  pointer-events: none;
-}
-
-.btn {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 35px #087cff99;
-}
-
-footer {
-  background: rgba(3, 7, 18, 0.7);
-  border-top: 1px solid rgba(0, 217, 255, 0.15);
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-
-.logo-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: linear-gradient(
-    135deg, #00d9ff, #087cff, #a020f0
-  );
-  color: white;
-  -webkit-text-fill-color: white;
-  box-shadow: 0 0 20px #087cff88;
-}
-
-
-.apps-section {
-  padding: 65px 22px;
-  text-align: center;
-}
-
-.apps-tag {
-  color: #00d9ff;
-  letter-spacing: 3px;
-  font-size: 12px;
-  margin-bottom: 12px;
-}
-
-.apps-section h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-}
-
-.apps-section h2 span {
-  background: linear-gradient(90deg, #00d9ff, #a020f0);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.apps-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 15px;
-  max-width: 650px;
-  margin: auto;
-}
-
-.app-card {
-  padding: 22px 12px;
-  border-radius: 18px;
-  text-align: left;
-  background: rgba(12, 28, 59, 0.8);
-  border: 1px solid #087cff88;
-  box-shadow: 0 0 18px #087cff18;
-}
-
-.app-card.purple {
-  border-color: #9228e888;
-  background: rgba(30, 15, 57, 0.8);
-}
-
-.app-icon {
-  font-size: 32px;
-  color: #00d9ff;
-  margin-bottom: 12px;
-}
-
-.app-card h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.app-card p {
-  color: #a9b8d0;
-  font-size: 13px;
-}
-
-@media (max-width: 360px) {
-  .apps-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.about-section {
-  padding: 90px 25px;
-  text-align: center;
-  background: #081329;
-}
-
-.about-tag {
-  color: #00d9ff;
-  letter-spacing: 4px;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.about-section h2 {
-  color: white;
-  font-size: 38px;
-  margin: 20px 0;
-}
-
-.about-section h2 span {
-  background: linear-gradient(90deg, #00cfff, #963cff);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.about-text {
-  color: #aab9d4;
-  font-size: 17px;
-  line-height: 1.9;
-  max-width: 750px;
-  margin: auto;
-}
-
-.about-highlight {
-  color: #00d9ff;
-  font-weight: bold;
-}
-
-@media (max-width: 600px) {
-  .about-section {
-    padding: 70px 22px;
-  }
-
-  .about-section h2 {
-    font-size: 30px;
-  }
-}
+    @media (max-width: 360px) {
+      .apps-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
   </style>
 </head>
+
 <body>
+
+  <!-- HEADER -->
 
   <header>
     <div class="logo">
-  <span class="logo-mark">Z</span>
-  ZENVORA
+      <span class="logo-mark">Z</span>
+      ZENVORA
     </div>
     <div>☰</div>
   </header>
+
+  <!-- HERO SECTION -->
 
   <main class="hero">
     <p class="tag">WELCOME TO THE FUTURE</p>
@@ -326,60 +395,108 @@ footer {
 
     <a href="#about" class="btn">Explore ZENVORA</a>
   </main>
-<section class="apps-section" id="apps">
-  <p class="apps-tag">POWERED BY ZENVORA</p>
-  <h2>Our <span>Ecosystem</span></h2>
 
-  <div class="apps-grid">
-    <div class="app-card blue">
-      <div class="app-icon">⌨</div>
-      <h3>ZENVORA Keyboard</h3>
-      <p>Type Smarter.</p>
+  <!-- ECOSYSTEM SECTION -->
+
+  <section class="apps-section" id="apps">
+
+    <p class="apps-tag">POWERED BY ZENVORA</p>
+
+    <h2>Our <span>Ecosystem</span></h2>
+
+    <div class="apps-grid">
+
+      <div class="app-card blue">
+        <div class="app-icon">⌨</div>
+        <h3>ZENVORA Keyboard</h3>
+        <p>Type Smarter.</p>
+      </div>
+
+      <div class="app-card purple">
+        <div class="app-icon">▤</div>
+        <h3>ZENVORA Notes</h3>
+        <p>Note Better.</p>
+      </div>
+
+      <div class="app-card blue">
+        <div class="app-icon">◎</div>
+        <h3>ZENVORA Browser</h3>
+        <p>Browse Faster.</p>
+      </div>
+
+      <div class="app-card purple">
+        <div class="app-icon">AI</div>
+        <h3>ZENVORA AI</h3>
+        <p>Think Smarter.</p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="app-card purple">
-      <div class="app-icon">▤</div>
-      <h3>ZENVORA Notes</h3>
-      <p>Note Better.</p>
+  <!-- DAY 8 - SERVICES SECTION -->
+
+  <section class="services-section" id="services">
+
+    <p class="services-tag">WHAT WE DO</p>
+
+    <h2>Our <span>Services</span></h2>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">⌨</div>
+        <h3>Android App Development</h3>
+        <p>Powerful and user-friendly Android applications.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Website Development</h3>
+        <p>Modern and responsive websites for everyone.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✦</div>
+        <h3>UI/UX Design</h3>
+        <p>Beautiful and easy-to-use digital experiences.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>AI Solutions</h3>
+        <p>Smart technology for a better digital future.</p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="app-card blue">
-      <div class="app-icon">◎</div>
-      <h3>ZENVORA Browser</h3>
-      <p>Browse Faster.</p>
-    </div>
+  <!-- ABOUT SECTION -->
 
-    <div class="app-card purple">
-      <div class="app-icon">AI</div>
-      <h3>ZENVORA AI</h3>
-      <p>Think Smarter.</p>
-    </div>
-  </div>
-</section>
+  <section class="about-section" id="about">
 
-<section class="about-section" id="about">
+    <p class="about-tag">WHO WE ARE</p>
 
-  <p class="about-tag">WHO WE ARE</p>
+    <h2>About <span>ZENVORA</span></h2>
 
-  <h2>About <span>ZENVORA</span></h2>
+    <p class="about-text">
+      ZENVORA Technologies is focused on building
+      innovative digital solutions for a smarter
+      and more connected future.
 
-  <p class="about-text">
-    ZENVORA Technologies is focused on building
-    innovative digital solutions for a smarter
-    and more connected future.
+      Our mission is to create powerful applications,
+      useful tools and modern technology experiences
+      that make everyday life easier.
 
-    Our mission is to create powerful applications,
-    useful tools and modern technology experiences
-    that make everyday life easier.
+      <br><br>
 
-    <br><br>
+      <span class="about-highlight">
+        Technology Beyond Limits.
+      </span>
+    </p>
 
-    <span class="about-highlight">
-      Technology Beyond Limits.
-    </span>
-  </p>
+  </section>
 
-</section>
+  <!-- FOOTER -->
 
   <footer>
     © 2026 ZENVORA Technologies.
