@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#071126">
-  <meta name="description" content="ZENVORA Technologies - Technology Beyond Limits. Discover innovative applications and digital solutions.">
+  <meta name="description" content="ZENVORA Technologies - Technology Beyond Limits.">
   <title>ZENVORA | Technology Beyond Limits</title>
 
   <style>
@@ -21,13 +20,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      background:
-        radial-gradient(
-          circle at 50% 35%,
-          #102653 0%,
-          #071126 48%,
-          #030712 100%
-        );
+      background: radial-gradient(circle at 50% 35%, #102653 0%, #071126 48%, #030712 100%);
       background-attachment: fixed;
       color: white;
     }
@@ -42,7 +35,6 @@
       z-index: 100;
       background: rgba(5, 12, 29, 0.85);
       backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(0, 217, 255, 0.15);
     }
 
@@ -53,9 +45,7 @@
       font-size: 25px;
       font-weight: 900;
       letter-spacing: 1px;
-      background: linear-gradient(
-        90deg, #00d9ff, #087cff, #a020f0
-      );
+      background: linear-gradient(90deg, #00d9ff, #087cff, #a020f0);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -67,9 +57,7 @@
       width: 38px;
       height: 38px;
       border-radius: 10px;
-      background: linear-gradient(
-        135deg, #00d9ff, #087cff, #a020f0
-      );
+      background: linear-gradient(135deg, #00d9ff, #087cff, #a020f0);
       color: white;
       -webkit-text-fill-color: white;
       box-shadow: 0 0 20px #087cff88;
@@ -87,32 +75,29 @@
       overflow: hidden;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      background: #087cff;
-      filter: blur(130px);
-      opacity: 0.18;
-      border-radius: 50%;
-      top: 10%;
-      left: -100px;
-      pointer-events: none;
-    }
-
+    .hero::before,
     .hero::after {
       content: "";
       position: absolute;
-      width: 240px;
-      height: 240px;
-      background: #9228e8;
+      width: 250px;
+      height: 250px;
       filter: blur(130px);
-      opacity: 0.16;
       border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      background: #087cff;
+      opacity: 0.18;
+      top: 10%;
+      left: -100px;
+    }
+
+    .hero::after {
+      background: #9228e8;
+      opacity: 0.16;
       bottom: 0;
       right: -100px;
-      pointer-events: none;
     }
 
     .tag {
@@ -129,9 +114,7 @@
     }
 
     h1 span {
-      background: linear-gradient(
-        90deg, #00d9ff, #087cff, #a020f0
-      );
+      background: linear-gradient(90deg, #00d9ff, #087cff, #a020f0);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -152,9 +135,7 @@
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 0 25px #087cff55;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      z-index: 1;
+      transition: 0.3s;
     }
 
     .btn:hover {
@@ -162,77 +143,14 @@
       box-shadow: 0 0 35px #087cff99;
     }
 
-    /* ECOSYSTEM SECTION */
+    /* ECOSYSTEM */
 
     .apps-section {
       padding: 65px 22px;
       text-align: center;
     }
 
-    .apps-tag {
-      color: #00d9ff;
-      letter-spacing: 3px;
-      font-size: 12px;
-      margin-bottom: 12px;
-    }
-
-    .apps-section h2 {
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-
-    .apps-section h2 span {
-      background: linear-gradient(90deg, #00d9ff, #a020f0);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 15px;
-      max-width: 650px;
-      margin: auto;
-    }
-
-    .app-card {
-      padding: 22px 12px;
-      border-radius: 18px;
-      text-align: left;
-      background: rgba(12, 28, 59, 0.8);
-      border: 1px solid #087cff88;
-      box-shadow: 0 0 18px #087cff18;
-    }
-
-    .app-card.purple {
-      border-color: #9228e888;
-      background: rgba(30, 15, 57, 0.8);
-    }
-
-    .app-icon {
-      font-size: 32px;
-      color: #00d9ff;
-      margin-bottom: 12px;
-    }
-
-    .app-card h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .app-card p {
-      color: #a9b8d0;
-      font-size: 13px;
-    }
-
-    /* DAY 8 - SERVICES SECTION */
-
-    .services-section {
-      padding: 80px 22px;
-      text-align: center;
-      background: #071126;
-    }
-
+    .apps-tag,
     .services-tag {
       color: #00d9ff;
       letter-spacing: 3px;
@@ -240,17 +158,20 @@
       margin-bottom: 15px;
     }
 
+    .apps-section h2,
     .services-section h2 {
       font-size: 32px;
       margin-bottom: 35px;
     }
 
+    .apps-section h2 span,
     .services-section h2 span {
       background: linear-gradient(90deg, #00d9ff, #a020f0);
       -webkit-background-clip: text;
       color: transparent;
     }
 
+    .apps-grid,
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -259,18 +180,52 @@
       margin: auto;
     }
 
+    .app-card,
     .service-card {
       padding: 25px 15px;
-      text-align: left;
       border-radius: 18px;
+      text-align: left;
       background: rgba(12, 28, 59, 0.8);
       border: 1px solid #087cff88;
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 18px #087cff18;
     }
 
+    .app-card.purple,
     .service-card:nth-child(even) {
-      background: rgba(30, 15, 57, 0.8);
       border-color: #9228e888;
+      background: rgba(30, 15, 57, 0.8);
+    }
+
+    .app-icon,
+    .service-icon {
+      font-size: 32px;
+      color: #00d9ff;
+      margin-bottom: 15px;
+    }
+
+    .app-card h3,
+    .service-card h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .app-card p,
+    .service-card p {
+      color: #a9b8d0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* DAY 8 - SERVICES */
+
+    .services-section {
+      padding: 80px 22px;
+      text-align: center;
+      background: #071126;
+    }
+
+    .service-card {
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .service-card:hover {
@@ -278,24 +233,7 @@
       box-shadow: 0 0 20px #087cff44;
     }
 
-    .service-icon {
-      font-size: 32px;
-      color: #00d9ff;
-      margin-bottom: 15px;
-    }
-
-    .service-card h3 {
-      font-size: 17px;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      color: #a9b8d0;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    /* ABOUT SECTION */
+    /* ABOUT */
 
     .about-section {
       padding: 90px 25px;
@@ -311,7 +249,6 @@
     }
 
     .about-section h2 {
-      color: white;
       font-size: 38px;
       margin: 20px 0;
     }
@@ -333,6 +270,91 @@
     .about-highlight {
       color: #00d9ff;
       font-weight: bold;
+    }
+
+    /* DAY 9 - CONTACT */
+
+    .contact-section {
+      padding: 80px 22px;
+      text-align: center;
+      background: #071126;
+    }
+
+    .contact-tag {
+      color: #00d9ff;
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .contact-section h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .contact-section h2 span {
+      background: linear-gradient(90deg, #00d9ff, #963cff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .contact-text {
+      color: #a9b8d0;
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 16px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      border: 1px solid #087cff88;
+      background: #0c1c3b;
+      color: white;
+      font-size: 15px;
+      outline: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #00d9ff;
+      box-shadow: 0 0 12px #087cff44;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #a9b8d0;
+    }
+
+    .contact-form textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #087cff, #9228e8);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px #087cff88;
     }
 
     /* FOOTER */
@@ -364,7 +386,6 @@
         grid-template-columns: 1fr;
       }
     }
-
   </style>
 </head>
 
@@ -380,7 +401,7 @@
     <div>☰</div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
 
   <main class="hero">
     <p class="tag">WELCOME TO THE FUTURE</p>
@@ -396,17 +417,14 @@
     <a href="#about" class="btn">Explore ZENVORA</a>
   </main>
 
-  <!-- ECOSYSTEM SECTION -->
+  <!-- ECOSYSTEM -->
 
   <section class="apps-section" id="apps">
-
     <p class="apps-tag">POWERED BY ZENVORA</p>
-
     <h2>Our <span>Ecosystem</span></h2>
 
     <div class="apps-grid">
-
-      <div class="app-card blue">
+      <div class="app-card">
         <div class="app-icon">⌨</div>
         <h3>ZENVORA Keyboard</h3>
         <p>Type Smarter.</p>
@@ -418,7 +436,7 @@
         <p>Note Better.</p>
       </div>
 
-      <div class="app-card blue">
+      <div class="app-card">
         <div class="app-icon">◎</div>
         <h3>ZENVORA Browser</h3>
         <p>Browse Faster.</p>
@@ -429,20 +447,16 @@
         <h3>ZENVORA AI</h3>
         <p>Think Smarter.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- DAY 8 - SERVICES SECTION -->
+  <!-- DAY 8 - SERVICES -->
 
   <section class="services-section" id="services">
-
     <p class="services-tag">WHAT WE DO</p>
-
     <h2>Our <span>Services</span></h2>
 
     <div class="services-grid">
-
       <div class="service-card">
         <div class="service-icon">⌨</div>
         <h3>Android App Development</h3>
@@ -466,14 +480,12 @@
         <h3>AI Solutions</h3>
         <p>Smart technology for a better digital future.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT -->
 
   <section class="about-section" id="about">
-
     <p class="about-tag">WHO WE ARE</p>
 
     <h2>About <span>ZENVORA</span></h2>
@@ -493,6 +505,45 @@
         Technology Beyond Limits.
       </span>
     </p>
+  </section>
+
+  <!-- DAY 9 - CONTACT -->
+
+  <section class="contact-section" id="contact">
+
+    <p class="contact-tag">GET IN TOUCH</p>
+
+    <h2>Contact <span>Us</span></h2>
+
+    <p class="contact-text">
+      Have a project or idea?
+      Let's build something amazing together.
+    </p>
+
+    <form class="contact-form">
+
+      <input
+        type="text"
+        placeholder="Your Name"
+        required
+      >
+
+      <input
+        type="email"
+        placeholder="Your Email"
+        required
+      >
+
+      <textarea
+        placeholder="Your Message"
+        required
+      ></textarea>
+
+      <button type="submit">
+        Send Message
+      </button>
+
+    </form>
 
   </section>
 
