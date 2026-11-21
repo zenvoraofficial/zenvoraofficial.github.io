@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#071126">
   <meta name="description" content="ZENVORA Technologies - Technology Beyond Limits.">
+  <meta property="og:title" content="ZENVORA | Technology Beyond Limits">
+  <meta property="og:description" content="Discover innovative technology, powerful applications and a smarter digital future with ZENVORA.">
+  <meta property="og:type" content="website">
   <title>ZENVORA | Technology Beyond Limits</title>
 
   <style>
@@ -15,17 +17,19 @@
       box-sizing: border-box;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: radial-gradient(circle at 50% 35%, #102653 0%, #071126 48%, #030712 100%);
       background-attachment: fixed;
-      color: white;
+      color: #ffffff;
     }
 
     header {
-      padding: 22px;
+      padding: 18px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -41,10 +45,11 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 25px;
+      gap: 10px;
+      font-size: 24px;
       font-weight: 900;
       letter-spacing: 1px;
+      text-decoration: none;
       background: linear-gradient(90deg, #00d9ff, #087cff, #a020f0);
       -webkit-background-clip: text;
       color: transparent;
@@ -58,11 +63,47 @@
       height: 38px;
       border-radius: 10px;
       background: linear-gradient(135deg, #00d9ff, #087cff, #a020f0);
-      color: white;
-      -webkit-text-fill-color: white;
-      box-shadow: 0 0 20px #087cff88;
+      color: #ffffff;
+      -webkit-text-fill-color: #ffffff;
+      box-shadow: 0 0 20px rgba(8, 124, 255, 0.53);
     }
 
+    .menu-btn {
+      background: rgba(12, 28, 59, 0.8);
+      border: 1px solid rgba(0, 217, 255, 0.25);
+      color: #ffffff;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .nav-drawer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 16px 22px;
+      background: rgba(5, 12, 29, 0.96);
+      border-bottom: 1px solid rgba(0, 217, 255, 0.15);
+    }
+
+    .nav-drawer[hidden] {
+      display: none;
+    }
+
+    .nav-drawer a {
+      color: #d6e2f5;
+      text-decoration: none;
+      padding: 8px 0;
+      font-weight: 600;
+    }
+
+    .nav-drawer a:hover {
+      color: #00d9ff;
+    }
+
+    /* HERO */
     .hero {
       min-height: 75vh;
       padding: 90px 22px;
@@ -131,23 +172,27 @@
       padding: 14px 28px;
       border-radius: 30px;
       background: linear-gradient(90deg, #087cff, #9228e8);
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 0 25px #087cff55;
+      box-shadow: 0 0 25px rgba(8, 124, 255, 0.35);
       transition: 0.3s;
     }
 
     .btn:hover {
       transform: translateY(-4px);
-      box-shadow: 0 0 35px #087cff99;
+      box-shadow: 0 0 35px rgba(8, 124, 255, 0.6);
     }
 
-    /* ECOSYSTEM */
-
-    .apps-section {
-      padding: 65px 22px;
+    /* ECOSYSTEM & SERVICES */
+    .apps-section,
+    .services-section {
+      padding: 72px 22px;
       text-align: center;
+    }
+
+    .services-section {
+      background: #071126;
     }
 
     .apps-tag,
@@ -182,31 +227,31 @@
 
     .app-card,
     .service-card {
-      padding: 25px 15px;
+      padding: 25px 18px;
       border-radius: 18px;
       text-align: left;
       background: rgba(12, 28, 59, 0.8);
-      border: 1px solid #087cff88;
-      box-shadow: 0 0 18px #087cff18;
+      border: 1px solid rgba(8, 124, 255, 0.53);
+      box-shadow: 0 0 18px rgba(8, 124, 255, 0.1);
     }
 
     .app-card.purple,
     .service-card:nth-child(even) {
-      border-color: #9228e888;
+      border-color: rgba(146, 40, 232, 0.53);
       background: rgba(30, 15, 57, 0.8);
     }
 
     .app-icon,
     .service-icon {
-      font-size: 32px;
+      font-size: 28px;
       color: #00d9ff;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     .app-card h3,
     .service-card h3 {
       font-size: 17px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .app-card p,
@@ -216,25 +261,16 @@
       line-height: 1.6;
     }
 
-    /* SERVICES */
-
-    .services-section {
-      padding: 80px 22px;
-      text-align: center;
-      background: #071126;
-    }
-
     .service-card {
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .service-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px #087cff44;
+      box-shadow: 0 0 20px rgba(8, 124, 255, 0.28);
     }
 
     /* ABOUT + CONTACT */
-
     .about-contact-section {
       padding: 80px 22px;
       text-align: center;
@@ -258,15 +294,15 @@
       gap: 8px;
       flex: 1;
       min-width: 0;
-      padding: 17px 12px;
-      border: 1px solid #087cff88;
+      padding: 16px 12px;
+      border: 1px solid rgba(8, 124, 255, 0.53);
       border-radius: 50px;
       background: linear-gradient(90deg, #087cff, #9228e8);
-      color: white;
-      font-size: 17px;
+      color: #ffffff;
+      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 0 25px #087cff44;
+      box-shadow: 0 0 25px rgba(8, 124, 255, 0.28);
       transition: 0.3s;
       white-space: nowrap;
     }
@@ -274,7 +310,7 @@
     .about-toggle:hover,
     .contact-toggle:hover {
       transform: translateY(-4px);
-      box-shadow: 0 0 35px #087cff99;
+      box-shadow: 0 0 35px rgba(8, 124, 255, 0.6);
     }
 
     .about-content,
@@ -286,7 +322,7 @@
 
     .about-content[hidden],
     .contact-form[hidden] {
-      display: none !important;
+      display: none;
     }
 
     .about-tag,
@@ -318,6 +354,8 @@
     }
 
     .about-highlight {
+      display: inline-block;
+      margin-top: 16px;
       color: #00d9ff;
       font-weight: bold;
     }
@@ -336,20 +374,20 @@
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 20px;
+      padding: 18px;
       border-radius: 18px;
-      border: 1px solid #087cff66;
+      border: 1px solid rgba(8, 124, 255, 0.4);
       background: #0c1c3b;
-      color: white;
-      font-size: 17px;
+      color: #ffffff;
+      font-size: 16px;
       outline: none;
-      font-family: Arial, sans-serif;
+      font-family: inherit;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       border-color: #00d9ff;
-      box-shadow: 0 0 12px #087cff44;
+      box-shadow: 0 0 12px rgba(8, 124, 255, 0.28);
     }
 
     .contact-form input::placeholder,
@@ -358,7 +396,7 @@
     }
 
     .contact-form textarea {
-      min-height: 150px;
+      min-height: 140px;
       resize: vertical;
     }
 
@@ -368,8 +406,8 @@
       border: none;
       border-radius: 35px;
       background: linear-gradient(90deg, #087cff, #9228e8);
-      color: white;
-      font-size: 18px;
+      color: #ffffff;
+      font-size: 17px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
@@ -377,10 +415,8 @@
 
     .contact-form form button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 25px #087cff88;
+      box-shadow: 0 0 25px rgba(8, 124, 255, 0.53);
     }
-
-    /* ANIMATION */
 
     @keyframes sectionOpen {
       from {
@@ -393,8 +429,6 @@
       }
     }
 
-    /* FOOTER */
-
     footer {
       padding: 25px;
       text-align: center;
@@ -404,8 +438,6 @@
       font-size: 13px;
     }
 
-    /* MOBILE RESPONSIVE */
-
     @media (max-width: 600px) {
       .about-content h2,
       .contact-form h2 {
@@ -414,8 +446,8 @@
 
       .about-toggle,
       .contact-toggle {
-        padding: 16px 8px;
-        font-size: 16px;
+        padding: 15px 8px;
+        font-size: 15px;
       }
     }
 
@@ -440,33 +472,29 @@
 
 <body>
 
-  <!-- HEADER -->
-
   <header>
-    <div class="logo">
+    <a href="#" class="logo">
       <span class="logo-mark">Z</span>
       ZENVORA
-    </div>
-    <div>☰</div>
+    </a>
+    <button type="button" class="menu-btn" id="menuToggle" aria-expanded="false" aria-controls="navDrawer" onclick="toggleMenu()">☰</button>
   </header>
 
-  <!-- HERO -->
+  <nav class="nav-drawer" id="navDrawer" hidden>
+    <a href="#apps" onclick="closeMenu()">Ecosystem</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#about" onclick="openAboutFromNav()">About Us</a>
+    <a href="#about" onclick="openContactFromNav()">Contact Us</a>
+  </nav>
 
   <main class="hero">
     <p class="tag">WELCOME TO THE FUTURE</p>
-
     <h1>Technology <span>Beyond Limits.</span></h1>
-
     <p class="description">
-      Discover innovative technology,
-      powerful applications and a smarter
-      digital future with ZENVORA.
+      Discover innovative technology, powerful applications and a smarter digital future with ZENVORA.
     </p>
-
-    <a href="#about" class="btn">Explore ZENVORA</a>
+    <a href="#about" class="btn" onclick="openAboutFromNav()">Explore ZENVORA</a>
   </main>
-
-  <!-- ECOSYSTEM -->
 
   <section class="apps-section" id="apps">
     <p class="apps-tag">POWERED BY ZENVORA</p>
@@ -499,8 +527,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-
   <section class="services-section" id="services">
     <p class="services-tag">WHAT WE DO</p>
     <h2>Our <span>Services</span></h2>
@@ -532,14 +558,8 @@
     </div>
   </section>
 
-  <!-- ABOUT US + CONTACT US -->
-
   <section class="about-contact-section" id="about">
-
-    <!-- TWO BUTTONS SIDE BY SIDE -->
-
     <div class="about-contact-buttons">
-
       <button
         type="button"
         class="about-toggle"
@@ -559,177 +579,116 @@
         aria-controls="contactForm">
         ✉ Contact Us
       </button>
-
     </div>
-
-    <!-- ABOUT CONTENT -->
 
     <div class="about-content" id="aboutContent" hidden>
-
       <p class="about-tag">WHO WE ARE</p>
-
       <h2>About <span>ZENVORA</span></h2>
-
       <p class="about-text">
-        ZENVORA Technologies is focused on building
-        innovative digital solutions for a smarter
-        and more connected future.
-
-        Our mission is to create powerful applications,
-        useful tools and modern technology experiences
-        that make everyday life easier.
-
-        <br><br>
-
-        <span class="about-highlight">
-          Technology Beyond Limits.
-        </span>
+        ZENVORA Technologies is focused on building innovative digital solutions for a smarter and more connected future.
+        Our mission is to create powerful applications, useful tools and modern technology experiences that make everyday life easier.
+        <span class="about-highlight">Technology Beyond Limits.</span>
       </p>
-
     </div>
 
-    <!-- CONTACT FORM -->
-
     <div class="contact-form" id="contactForm" hidden>
-
       <p class="contact-tag">GET IN TOUCH</p>
-
       <h2>Contact <span>Us</span></h2>
-
       <p class="contact-text">
-        Have a project or idea?
-        Let's build something amazing together.
+        Have a project or idea? Let's build something amazing together.
       </p>
 
       <form onsubmit="sendContactMessage(event)">
-
-        <input
-          type="text"
-          id="contactName"
-          placeholder="Your Name"
-          required
-        >
-
-        <input
-          type="email"
-          id="contactEmail"
-          placeholder="Your Email"
-          required
-        >
-
-        <textarea
-          id="contactMessage"
-          placeholder="Your Message"
-          required
-        ></textarea>
-
-        <button type="submit">
-          Send Message
-        </button>
-
+        <input type="text" id="contactName" placeholder="Your Name" required>
+        <input type="email" id="contactEmail" placeholder="Your Email" required>
+        <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
       </form>
-
     </div>
-
   </section>
 
-  <!-- FOOTER -->
-
   <footer>
-    © 2026 ZENVORA Technologies.
-    All Rights Reserved.
+    © 2026 ZENVORA Technologies. All Rights Reserved.
   </footer>
 
-  <!-- JAVASCRIPT -->
-
   <script>
+    function toggleMenu() {
+      const drawer = document.getElementById("navDrawer");
+      const btn = document.getElementById("menuToggle");
+      drawer.hidden = !drawer.hidden;
+      btn.setAttribute("aria-expanded", String(!drawer.hidden));
+    }
 
-    // ABOUT US TOGGLE
+    function closeMenu() {
+      const drawer = document.getElementById("navDrawer");
+      const btn = document.getElementById("menuToggle");
+      drawer.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+    }
 
-    function toggleAbout() {
-
+    function toggleAbout(forceOpen = false) {
       const about = document.getElementById("aboutContent");
       const contact = document.getElementById("contactForm");
       const aboutButton = document.getElementById("aboutButton");
       const contactButton = document.getElementById("contactButton");
 
-      about.hidden = !about.hidden;
+      about.hidden = forceOpen ? false : !about.hidden;
       contact.hidden = true;
 
-      aboutButton.setAttribute(
-        "aria-expanded",
-        String(!about.hidden)
-      );
-
+      aboutButton.setAttribute("aria-expanded", String(!about.hidden));
       contactButton.setAttribute("aria-expanded", "false");
 
       if (!about.hidden) {
         setTimeout(() => {
-          about.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
+          about.scrollIntoView({ behavior: "smooth", block: "center" });
         }, 100);
       }
-
     }
 
-    // CONTACT US TOGGLE
-
-    function toggleContact() {
-
+    function toggleContact(forceOpen = false) {
       const contact = document.getElementById("contactForm");
       const about = document.getElementById("aboutContent");
       const contactButton = document.getElementById("contactButton");
       const aboutButton = document.getElementById("aboutButton");
 
-      contact.hidden = !contact.hidden;
+      contact.hidden = forceOpen ? false : !contact.hidden;
       about.hidden = true;
 
-      contactButton.setAttribute(
-        "aria-expanded",
-        String(!contact.hidden)
-      );
-
+      contactButton.setAttribute("aria-expanded", String(!contact.hidden));
       aboutButton.setAttribute("aria-expanded", "false");
 
       if (!contact.hidden) {
         setTimeout(() => {
-          contact.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
+          contact.scrollIntoView({ behavior: "smooth", block: "center" });
         }, 100);
       }
-
     }
 
-    // SEND CONTACT MESSAGE
+    function openAboutFromNav() {
+      closeMenu();
+      toggleAbout(true);
+    }
+
+    function openContactFromNav() {
+      closeMenu();
+      toggleContact(true);
+    }
 
     function sendContactMessage(event) {
-
       event.preventDefault();
 
       const name = document.getElementById("contactName").value.trim();
       const email = document.getElementById("contactEmail").value.trim();
       const message = document.getElementById("contactMessage").value.trim();
 
-      const subject = encodeURIComponent(
-        "ZENVORA Website Contact - " + name
-      );
-
+      const subject = encodeURIComponent("ZENVORA Website Contact - " + name);
       const body = encodeURIComponent(
-        "Name: " + name +
-        "\nEmail: " + email +
-        "\n\nMessage:\n" + message
+        "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
       );
 
       window.location.href =
-        "mailto:YOUR_EMAIL@example.com?subject=" +
-        subject + "&body=" + body;
-
+        "mailto:YOUR_EMAIL@example.com?subject=" + subject + "&body=" + body;
     }
-
   </script>
 
 </body>
